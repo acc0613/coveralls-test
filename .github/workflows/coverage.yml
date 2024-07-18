@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build and Test
-        run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES test
+        run: xcodebuild test -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -sdk iphoneos -enableCodeCoverage YES
       - run: |
           gem install bundler
           gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      - run: slather coverage --arch x86_64 --scheme TestApp --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
