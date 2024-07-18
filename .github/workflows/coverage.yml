@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build and Test
-        run: xcodebuild test -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -sdk iphoneos -enableCodeCoverage YES
+        run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -sdk iphoneos -enableCodeCoverage YES test
       - run: |
           gem install bundler
           gem install slather
