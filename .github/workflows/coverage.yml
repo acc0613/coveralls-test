@@ -11,7 +11,9 @@ jobs:
       - name: Build and Test
         run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES test
         # run: xcodebuild test -scheme TestApp -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug -sdk iphoneos | xcpretty && exit ${PIPESTATUS[0]}
-      - run: |
+      - if: always()
+        run: |
           gem install bundler
           gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      - if: always()
+        run: slather coverage --arch x86_64 --scheme TestApp --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
