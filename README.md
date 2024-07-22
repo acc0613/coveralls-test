@@ -1,3 +1,3 @@
 # coveralls-test
 
-update
+update readme
