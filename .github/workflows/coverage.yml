@@ -15,7 +15,7 @@ jobs:
       - run: |
           gem install bundler
           gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
       - name: Coveralls Parallel
         id: coveralls
         uses: coverallsapp/github-action@v2
