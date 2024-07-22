@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Coveralls Parallel
+        id: coveralls
         uses: coverallsapp/github-action@v2
         with:
           compare-ref: main
@@ -18,6 +19,10 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           parallel-finished: true
+      - name: Coveralls Output
+        shell: bash
+        run: |
+          echo steps.coveralls.coveralls-api-result
       # - name: Build and Test
       #   run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES test
       #   # run: xcodebuild test -scheme TestApp -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug -sdk iphoneos | xcpretty && exit ${PIPESTATUS[0]}
