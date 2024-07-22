@@ -22,7 +22,7 @@ jobs:
       - name: Coveralls Output
         shell: bash
         run: |
-          echo steps.coveralls.coveralls-api-result
+          echo ${{ steps.coveralls.coveralls-api-result }}
       # - name: Build and Test
       #   run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES test
       #   # run: xcodebuild test -scheme TestApp -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug -sdk iphoneos | xcpretty && exit ${PIPESTATUS[0]}
