@@ -11,6 +11,7 @@ jobs:
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@v2
         with:
+          compare-ref: main
           file: TestApp/cobertura_25297.xml
           format: cobertura
       # - name: Build and Test
