@@ -13,7 +13,6 @@ struct TestAppApp: App {
         WindowGroup {
             ContentView()
             // Content2()
-            // test update
         }
     }
 }
