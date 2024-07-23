@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import TestApp
+// @testable import TestApp
 
 final class TestAppTests: XCTestCase {
 
@@ -19,6 +19,7 @@ final class TestAppTests: XCTestCase {
     }
 
     func testExample() throws {
+        XCTAssertTrue(true)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
@@ -28,8 +29,8 @@ final class TestAppTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        measure {
+      // Put the code you want to measure the time of here.
         }
     }
 

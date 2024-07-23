@@ -8,15 +8,23 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v3
+      - name: Set Xcode version
+        run: sudo xcode-select -switch /Applications/Xcode_15.0.1.app
+      - name: Build and Test
+        run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES CODE_SIGNING_ALLOWED=NO test
+      - run: |
+          gem install bundler
+          gem install slather
+      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
       - name: Coveralls Parallel
-        id: coveralls
+        id: cv-parallel
         uses: coverallsapp/github-action@v2
         with:
           compare-ref: main
-          file: TestApp/cobertura_25297.xml
+          file: TestApp/slather-report/cobertura.xml
           format: cobertura
       - name: Coveralls Finished
-        id: cv
+        id: cv-finished
         uses: coverallsapp/github-action@v2
         with:
           parallel-finished: true
@@ -24,12 +32,3 @@ jobs:
       #   shell: bash
       #   run: |
       #     echo ${{ steps.cv.outputs.coveralls-api-result }}
-      # - name: Build and Test
-      #   run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES test
-      #   # run: xcodebuild test -scheme TestApp -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug -sdk iphoneos | xcpretty && exit ${PIPESTATUS[0]}
-      # - if: always()
-      #   run: |
-      #     gem install bundler
-      #     gem install slather
-      # - if: always()
-      #   run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
