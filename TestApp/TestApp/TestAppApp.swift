@@ -12,7 +12,7 @@ struct TestAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            Content2()
+            // Content2()
         }
     }
 }
