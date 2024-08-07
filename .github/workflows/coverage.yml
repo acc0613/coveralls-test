@@ -25,11 +25,11 @@ jobs:
           file: TestApp/slather-report/cobertura.xml
           format: cobertura
           parallel: false
-      - uses: actions/upload-artifact@v4
-        with:
-          name: slather-xml
-          path: TestApp/slather-report/
-      - uses: actions/upload-artifact@v4
-        with:
-          name: slather-html
-          path: TestApp/slather-html/
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: slather-xml
+      #     path: TestApp/slather-report/
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: slather-html
+      #     path: TestApp/slather-html/

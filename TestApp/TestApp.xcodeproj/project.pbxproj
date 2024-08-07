@@ -14,6 +14,7 @@
 		CAC8C3A12C49440D00F096B5 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC8C3A02C49440D00F096B5 /* TestAppTests.swift */; };
 		CAFBFDC22C6377A0008E57D4 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBFDC12C6377A0008E57D4 /* SignUp.swift */; };
 		CAFBFDCA2C63AD6E008E57D4 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBFDC12C6377A0008E57D4 /* SignUp.swift */; };
+		CAFBFDCC2C63BDDA008E57D4 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBFDCB2C63BDDA008E57D4 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		CAC8C3AA2C49440D00F096B5 /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		CAC8C3AC2C49440D00F096B5 /* TestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CAFBFDC12C6377A0008E57D4 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		CAFBFDCB2C63BDDA008E57D4 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		CAC8C38E2C49440B00F096B5 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				CAFBFDCB2C63BDDA008E57D4 /* SwiftUIView.swift */,
 				CAFBFDC12C6377A0008E57D4 /* SignUp.swift */,
 				CAC8C38F2C49440B00F096B5 /* TestAppApp.swift */,
 				CAC8C3912C49440B00F096B5 /* ContentView.swift */,
@@ -215,6 +218,7 @@
 			files = (
 				CAC8C3922C49440B00F096B5 /* ContentView.swift in Sources */,
 				CAFBFDC22C6377A0008E57D4 /* SignUp.swift in Sources */,
+				CAFBFDCC2C63BDDA008E57D4 /* SwiftUIView.swift in Sources */,
 				CAC8C3902C49440B00F096B5 /* TestAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
