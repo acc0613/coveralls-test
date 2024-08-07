@@ -31,7 +31,7 @@ struct TestAppApp: App {
                 ContentView()
             }
             else {
-                SwiftUIView()
+                ContentView()
             }
         }
     }
