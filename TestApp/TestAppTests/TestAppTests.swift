@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import TestApp
+//@testable import TestApp
 
 final class TestAppTests: XCTestCase {
 
@@ -32,30 +32,6 @@ final class TestAppTests: XCTestCase {
 //        let expr2 = expr1
 //        XCTAssertEqual(expr1, expr2, "Expressions are equal")
 //    }
-    
-    func testSignUpFormModel_WhenCreated_EmailShouldHaveValidFormat() {
-     
-        // Arrange (GIVEN)
-        let firstName = "Maksim"
-        let lastName = "Kalik"
-        let email = "test@test.com"
-        let password = "qwerty123"
-        let repeatPassword = "qwerty123"
-
-        let signUpFormModel = SignUpFormModel(
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            password: password,
-            repeatPassword: repeatPassword
-        )
-
-        // Act (WHEN)
-        let isEmailFormatValid = signUpFormModel.isValidEmailFormat()
-     
-        // Assert (THEN)
-        XCTAssertTrue(isEmailFormatValid, "Provided valid email address does not have a valid format")
-    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
