@@ -23,11 +23,12 @@ jobs:
           compare-ref: main
           file: TestApp/slather-report/cobertura.xml
           format: cobertura
-      - name: Coveralls Finished
-        id: cv-finished
-        uses: coverallsapp/github-action@v2
-        with:
-          parallel-finished: true
+          parallel: false
+      # - name: Coveralls Finished
+      #   id: cv-finished
+      #   uses: coverallsapp/github-action@v2
+      #   with:
+      #     parallel-finished: true
       # - name: Coveralls Output
       #   shell: bash
       #   run: |
