@@ -6,7 +6,7 @@
 //
 
 import XCTest
-// @testable import TestApp
+@testable import TestApp
 
 final class TestAppTests: XCTestCase {
 
@@ -25,6 +25,36 @@ final class TestAppTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    }
+    
+//    func testExample1() throws {
+//        let expr1 = "expression 1"
+//        let expr2 = expr1
+//        XCTAssertEqual(expr1, expr2, "Expressions are equal")
+//    }
+    
+    func testSignUpFormModel_WhenCreated_EmailShouldHaveValidFormat() {
+     
+        // Arrange (GIVEN)
+        let firstName = "Maksim"
+        let lastName = "Kalik"
+        let email = "test@test.com"
+        let password = "qwerty123"
+        let repeatPassword = "qwerty123"
+
+        let signUpFormModel = SignUpFormModel(
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            repeatPassword: repeatPassword
+        )
+
+        // Act (WHEN)
+        let isEmailFormatValid = signUpFormModel.isValidEmailFormat()
+     
+        // Assert (THEN)
+        XCTAssertTrue(isEmailFormatValid, "Provided valid email address does not have a valid format")
     }
 
     func testPerformanceExample() throws {
