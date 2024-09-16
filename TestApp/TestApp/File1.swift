@@ -5,6 +5,7 @@ struct SignUpFormModel {
     let lastName: String
     let email: String
     let password: String
+    let pw: String
     let repeatPassword: String
 }
 
