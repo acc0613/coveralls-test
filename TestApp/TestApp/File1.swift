@@ -1,6 +1,6 @@
 import Foundation
 
-struct SignUpFormModel {
+struct SignUpFormModelFile {
     let firstName: String
     let lastName: String
     let email: String
@@ -9,7 +9,7 @@ struct SignUpFormModel {
     let repeatPassword: String
 }
 
-extension SignUpFormModel {
+extension SignUpFormModelFile {
     func isValidEmailFormat() -> Bool {
         return email.contains("@") && email.contains(".")
     }
