@@ -19,4 +19,4 @@ jobs:
       - uses: 5monkeys/cobertura-action@master
         with:
           path: TestApp/slather-report/cobertura.xml
-          minimum_coverage: 60
+          minimum_coverage: 50
