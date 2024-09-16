@@ -15,7 +15,7 @@ jobs:
       - run: |
           gem install bundler
           gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' --source-files 'TestApp/TestApp/SignUp.swift' --source-files 'TestApp/TestApp/SignUp1.swift' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' --source-files 'TestApp1/TestApp/SignUp.swift' --source-files 'TestApp1/TestApp/SignUp1.swift' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
       - uses: 5monkeys/cobertura-action@master
         with:
           path: TestApp/slather-report/cobertura.xml
