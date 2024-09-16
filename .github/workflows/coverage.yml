@@ -16,19 +16,7 @@ jobs:
           gem install bundler
           gem install slather
       - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
-      - name: Coveralls Parallel
-        id: cv-parallel
-        uses: coverallsapp/github-action@v2
+      - uses: 5monkeys/cobertura-action@master
         with:
-          compare-ref: main
-          file: TestApp/slather-report/cobertura.xml
-          format: cobertura
-      - name: Coveralls Finished
-        id: cv-finished
-        uses: coverallsapp/github-action@v2
-        with:
-          parallel-finished: true
-      # - name: Coveralls Output
-      #   shell: bash
-      #   run: |
-      #     echo ${{ steps.cv.outputs.coveralls-api-result }}
+          path: TestApp/slather-report/cobertura.xml
+          minimum_coverage: 60
