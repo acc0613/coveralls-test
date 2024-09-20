@@ -11,7 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set Xcode version
-        run: sudo xcode-select -switch /Applications/Xcode_15.0.1.app
+        run: |
+          sudo rm -rf /Library/Developer/CommandLineTools
+          sudo xcode-select --install
+          sudo xcode-select -switch /Library/Developer/CommandLineTools
+          sudo xcode-select -switch /Applications/Xcode_15.0.1.app
       - name: Build and Test
         run: |
           nvm alias default system
