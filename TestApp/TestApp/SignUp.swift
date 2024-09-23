@@ -1,13 +1,13 @@
 //
-//  FileTest1.swift
+//  SignUp.swift
 //  TestApp
 //
-//  Created by Casabuena, Abigail (Cognizant) on 9/17/24.
+//  Created by Casabuena, Abigail (Cognizant) on 8/7/24.
 //
 
 import Foundation
 
-struct SignUpFormModelx {
+struct SignUpFormModel {
     let firstName: String
     let lastName: String
     let email: String
@@ -15,7 +15,7 @@ struct SignUpFormModelx {
     let repeatPassword: String
 }
 
-extension SignUpFormModelx {
+extension SignUpFormModel {
     func isValidEmailFormat() -> Bool {
         return email.contains("@") && email.contains(".")
     }
