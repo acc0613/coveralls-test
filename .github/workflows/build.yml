@@ -10,6 +10,8 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v3
+      - name: Check Ruby version
+        run: ruby -v
       - name: Set Xcode version
         run: |
           sudo rm -rf /Library/Developer/CommandLineTools
