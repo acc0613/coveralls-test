@@ -17,7 +17,7 @@ jobs:
       - run: |
           gem install bundler
           gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      - run: slather coverage --arch x86_64 --github --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
         # --source-files 'TestApp/TestApp/SignUp.swift' --source-files 'TestApp/TestApp/SignUp1.swift' --source-files 'TestApp/TestApp/File1.swift'
       - uses: actions/upload-artifact@master
         with:
