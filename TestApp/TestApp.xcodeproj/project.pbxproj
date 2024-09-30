@@ -209,6 +209,10 @@
 				Base,
 			);
 			mainGroup = CAC8C3832C49440B00F096B5;
+			packageReferences = (
+				CA22F25F2CAAFB6D003CD553 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CA22F2602CAAFB97003CD553 /* XCRemoteSwiftPackageReference "Auth0" */,
+			);
 			productRefGroup = CAC8C38D2C49440B00F096B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -529,6 +533,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA22F25F2CAAFB6D003CD553 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		CA22F2602CAAFB97003CD553 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = CAC8C3842C49440B00F096B5 /* Project object */;
 }
