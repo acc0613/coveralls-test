@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set Xcode version
         run: sudo xcode-select -switch /Applications/Xcode_15.2.0.app
+      - run: |
+          sudo rm -rf coveralls-test/coveralls-test/TestApp/TestApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
       - name: Build and Test
         run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES CODE_SIGNING_ALLOWED=NO test
       - run: |
