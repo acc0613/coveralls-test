@@ -10,26 +10,30 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set Xcode version
         run: sudo xcode-select -switch /Applications/Xcode_15.2.0.app
-      - run: |
-          sudo rm -rf coveralls-test/coveralls-test/TestApp/TestApp.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+      - uses: actions/cache@v3
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
       - name: Build and Test
         run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES CODE_SIGNING_ALLOWED=NO test
-      - run: |
-          gem install bundler
-          gem install slather
-      - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
-      - name: Coveralls Parallel
-        id: cv-parallel
-        uses: coverallsapp/github-action@v2
-        with:
-          compare-ref: main
-          file: TestApp/slather-report/cobertura.xml
-          format: cobertura
-      - name: Coveralls Finished
-        id: cv-finished
-        uses: coverallsapp/github-action@v2
-        with:
-          parallel-finished: true
+      # - run: |
+      #     gem install bundler
+      #     gem install slather
+      # - run: slather coverage --arch x86_64 --scheme TestApp --configuration Release --workspace TestApp/TestApp.xcodeproj/project.xcworkspace --ignore '~/**/DerivedData/*' --ignore '../Library/Developer/*' --ignore '../../../Library/*' -x --output-directory TestApp/slather-report TestApp/TestApp.xcodeproj
+      # - name: Coveralls Parallel
+      #   id: cv-parallel
+      #   uses: coverallsapp/github-action@v2
+      #   with:
+      #     compare-ref: main
+      #     file: TestApp/slather-report/cobertura.xml
+      #     format: cobertura
+      # - name: Coveralls Finished
+      #   id: cv-finished
+      #   uses: coverallsapp/github-action@v2
+      #   with:
+      #     parallel-finished: true
       # - name: Coveralls Output
       #   shell: bash
       #   run: |
