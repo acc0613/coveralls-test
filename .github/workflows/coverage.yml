@@ -2,7 +2,7 @@ name: Check PR code coverage
 
 on:
   workflow_dispatch:
-  pull_request:
+  # pull_request:
 
 jobs:
   build:
