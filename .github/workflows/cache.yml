@@ -1,4 +1,4 @@
-name: SPM Cache
+name: SPM_Cache
 
 on:
   workflow_dispatch:
