@@ -30,6 +30,7 @@ jobs:
           restore-keys: xcode-cache-deriveddata-${{ github.workflow }}-
           restore-mtime-targets: |
             TestApp/**/*
+          use-default-mtime-targets: true
       - name: Build
         run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO
 
