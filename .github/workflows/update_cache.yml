@@ -1,8 +1,9 @@
 name: SPM_Cache
 
 on:
-  workflow_dispatch:
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
