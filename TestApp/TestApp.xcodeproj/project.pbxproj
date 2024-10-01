@@ -212,6 +212,7 @@
 			packageReferences = (
 				CA22F25F2CAAFB6D003CD553 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CA22F2602CAAFB97003CD553 /* XCRemoteSwiftPackageReference "Auth0" */,
+				CA22F2612CAC6EB2003CD553 /* XCRemoteSwiftPackageReference "Localytics-swiftpm" */,
 			);
 			productRefGroup = CAC8C38D2C49440B00F096B5 /* Products */;
 			projectDirPath = "";
@@ -549,6 +550,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.9.0;
+			};
+		};
+		CA22F2612CAC6EB2003CD553 /* XCRemoteSwiftPackageReference "Localytics-swiftpm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/localytics/Localytics-swiftpm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
