@@ -37,8 +37,8 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_15.2.0.app
       - uses: irgaly/xcode-cache@v1
         with:
-          # key: xcode-cache-deriveddata-
-          # restore-keys: xcode-cache-deriveddata-
+          key: xcode-cache-deriveddata-
+          restore-keys: xcode-cache-deriveddata-
           restore-mtime-targets: |
             TestApp/**/*
           use-default-mtime-targets: true
