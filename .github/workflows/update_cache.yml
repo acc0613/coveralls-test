@@ -1,9 +1,8 @@
 name: SPM_Cache_Update
 
 on:
-  # workflow_dispatch:
+  workflow_dispatch:
   schedule:
-    - cron: '40 13 * * *'
     - cron: '00 14 * * *'
   # push:
   #   branches:
