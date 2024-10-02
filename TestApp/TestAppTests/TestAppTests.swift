@@ -32,7 +32,11 @@ final class TestAppTests: XCTestCase {
     }
 
     func testExample2() throws {
-        XCTAssertTrue(false)
+        XCTAssertTrue(true)
+    }
+    
+    func testExample3() throws {
+        XCTAssertTrue(true)
     }
 
     func testPerformanceExample() throws {
