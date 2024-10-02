@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA22F2642CAD5599003CD553 /* File2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22F2632CAD5599003CD553 /* File2.swift */; };
 		CA346F512C99B15900C1FEF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA346F4A2C99B15900C1FEF3 /* Preview Assets.xcassets */; };
 		CA346F522C99B15900C1FEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA346F4C2C99B15900C1FEF3 /* Assets.xcassets */; };
 		CA346F532C99B15900C1FEF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA346F4D2C99B15900C1FEF3 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA22F2632CAD5599003CD553 /* File2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File2.swift; sourceTree = "<group>"; };
 		CA346F4A2C99B15900C1FEF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CA346F4C2C99B15900C1FEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA346F4D2C99B15900C1FEF3 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				CA346F4C2C99B15900C1FEF3 /* Assets.xcassets */,
 				CA346F4D2C99B15900C1FEF3 /* ContentView.swift */,
 				CA346F4E2C99B15900C1FEF3 /* File1.swift */,
+				CA22F2632CAD5599003CD553 /* File2.swift */,
 				CA346F4F2C99B15900C1FEF3 /* TestAppApp.swift */,
 				CA346F562C99B17300C1FEF3 /* FileTest1.swift */,
 			);
@@ -213,6 +216,7 @@
 				CA22F25F2CAAFB6D003CD553 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CA22F2602CAAFB97003CD553 /* XCRemoteSwiftPackageReference "Auth0" */,
 				CA22F2612CAC6EB2003CD553 /* XCRemoteSwiftPackageReference "Localytics-swiftpm" */,
+				CA22F2622CAD5086003CD553 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = CAC8C38D2C49440B00F096B5 /* Products */;
 			projectDirPath = "";
@@ -253,6 +257,7 @@
 				CAC8C3922C49440B00F096B5 /* ContentView.swift in Sources */,
 				CAC8C3902C49440B00F096B5 /* TestAppApp.swift in Sources */,
 				CA346F552C99B15900C1FEF3 /* TestAppApp.swift in Sources */,
+				CA22F2642CAD5599003CD553 /* File2.swift in Sources */,
 				CA346F572C99B17300C1FEF3 /* FileTest1.swift in Sources */,
 				CA346F532C99B15900C1FEF3 /* ContentView.swift in Sources */,
 				CA346F542C99B15900C1FEF3 /* File1.swift in Sources */,
@@ -558,6 +563,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.3.3;
+			};
+		};
+		CA22F2622CAD5086003CD553 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.36.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
