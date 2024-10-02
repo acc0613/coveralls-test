@@ -1,4 +1,4 @@
-name: SPM_Cache
+name: SPM_Cache_Update
 
 on:
   push:

@@ -21,4 +21,4 @@ jobs:
           swiftpm-cache-key: xcode-cache-swiftpm-
           swiftpm-cache-restore-keys: xcode-cache-swiftpm-
       - name: Build
-        run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO
+        run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES CODE_SIGNING_ALLOWED=NO test
