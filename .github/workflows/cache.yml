@@ -11,14 +11,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set Xcode version
         run: sudo xcode-select -switch /Applications/Xcode_15.2.0.app
-      - uses: irgaly/xcode-cache@v1
-        with:
-          key: xcode-cache-deriveddata-
-          restore-keys: xcode-cache-deriveddata-
-          restore-mtime-targets: |
-            TestApp/**/*
-          use-default-mtime-targets: true
-          swiftpm-cache-key: xcode-cache-swiftpm-
-          swiftpm-cache-restore-keys: xcode-cache-swiftpm-
       - name: Build and Test
         run: xcodebuild -workspace TestApp/TestApp.xcodeproj/project.xcworkspace -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Release -sdk iphoneos -enableCodeCoverage YES CODE_SIGNING_ALLOWED=NO test
