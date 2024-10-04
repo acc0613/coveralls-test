@@ -39,9 +39,9 @@ jobs:
         with:
           key: xcode-cache-deriveddata-
           restore-keys: xcode-cache-deriveddata-
-          restore-mtime-targets: |
-            TestApp/**/*
-          use-default-mtime-targets: true
+          # restore-mtime-targets: |
+          #   TestApp/**/*
+          use-default-mtime-targets: false
           swiftpm-cache-key: xcode-cache-swiftpm-
           swiftpm-cache-restore-keys: xcode-cache-swiftpm-
       - name: Build
